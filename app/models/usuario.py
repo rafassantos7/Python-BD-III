@@ -4,12 +4,13 @@ from config.database import db
 
 Base = declarative_base()
 
+
 class Usuario(Base):
     # Definindo características da tabela no banco de dados
     __tablename__ = "usuarios"
 
-    id = Column(Integer, primary_key = True, autoincrement = True)
-    name = Column(String(150))
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nome = Column(String(150))
     email = Column(String(150))
     senha = Column(String(150))
 
@@ -18,6 +19,7 @@ class Usuario(Base):
         self.nome = nome
         self.email = email
         self.senha = senha
+
 
 # Criando tabela no banco de dados.
 Base.metadata.create_all(bind=db)

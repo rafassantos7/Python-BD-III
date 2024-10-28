@@ -14,13 +14,14 @@ def main():
     email = input("Digite seu email: ")
     senha = input("Digite seu senha: ")
 
-    service.criar_usuario(nome = nome, email = email, senha = senha)
+    service.criar_usuario(nome=nome, email=email, senha=senha)
 
     # Listar todos os usuários cadastrados.
     print("\nListando usuários cadastrados.")
     lista_usuario = service.listar_todos_usuarios()
     for usuario in lista_usuario:
-        print(f"Nome: {usuario.nome} - Email: {usuario.email} - Senha {usuario.senha}")
+        print(f"Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}")
+
 
 if __name__ == "__main__":
     main()
