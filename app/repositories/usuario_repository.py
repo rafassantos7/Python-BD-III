@@ -11,6 +11,9 @@ class UsuarioRepository:
         self.session.commit()
         self.session.refresh(usuario)
 
+    def atualizar_usuario(self,usuario: Usuario):
+        
+
     def pesquisar_usuario_por_email(self, email: str):
         return self.session.query(Usuario).filter_by(email=email).first()
 
