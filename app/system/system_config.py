@@ -2,8 +2,9 @@ from services.usuario_services import UsuarioService
 from repositories.usuario_repository import UsuarioRepository
 from config.database import Session
 
+
 class Menu:
-    
+
     def menu_escolhas():
         session = Session()
         repository = UsuarioRepository(session)
@@ -17,9 +18,9 @@ class Menu:
             print("5 - Exibir todos os usuários cadastrados.")
             print("0 - Sair.")
             opcao = int(input("Digite a opção desejada: "))
-            
-            match(opcao):
-                case 1:   
+
+            match (opcao):
+                case 1:
                     service.criar_usuario()
                     input("Aperte enter para continuar...")
                 case 2:
@@ -34,15 +35,16 @@ class Menu:
                     input("Aperte enter para continuar...")
 
                 case 5:
-                     # Listar todos os usuários cadastrados.
+                    # Listar todos os usuários cadastrados.
                     print("\nListando usuários cadastrados.")
                     lista_usuario = service.listar_todos_usuarios()
                     for usuario in lista_usuario:
-                        print(f" Id: {usuario.id} - Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}")
-                
+                        print(
+                            f" Id: {usuario.id} - Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}"
+                        )
+
                 case 0:
                     break
 
                 case _:
                     print("Opção inválida.")
-                

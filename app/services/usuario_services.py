@@ -36,7 +36,9 @@ class UsuarioService:
             usuario = self.repository.pesquisar_usuario_por_id(id_pesquisa)
             if usuario:
                 print("Usuario pesquisado:")
-                print(f"{usuario.id} - {usuario.nome} - {usuario.email} - {usuario.senha}")
+                print(
+                    f"{usuario.id} - {usuario.nome} - {usuario.email} - {usuario.senha}"
+                )
                 return
 
         except TypeError as erro:
@@ -49,11 +51,11 @@ class UsuarioService:
             id_pesquisa = input("Digite o id do usuário que deseja alterar os dados: ")
             usuario = self.repository.pesquisar_usuario_por_id(id_pesquisa)
             if usuario:
-                    usuario.nome = input("Digite o novo nome:")
-                    usuario.email = input("Digite o novo email:")
-                    usuario.senha = input("Digite a novo senha:")
-                    self.repository.atualizar_usuario(usuario)
-                    return
+                usuario.nome = input("Digite o novo nome:")
+                usuario.email = input("Digite o novo email:")
+                usuario.senha = input("Digite a novo senha:")
+                self.repository.atualizar_usuario(usuario)
+                return
         except TypeError as erro:
             print(f"Erro ao deletar o usuário: {erro}")
         except Exception as erro:
@@ -64,7 +66,7 @@ class UsuarioService:
             id_pesquisa = input("Digite o id do usuário que deseja alterar os dados: ")
             usuario = self.repository.pesquisar_usuario_por_id(id_pesquisa)
             if usuario:
-                self.repository.excluir_usuario(usuario)    
+                self.repository.excluir_usuario(usuario)
                 print("Usuario deletado com sucesso.")
                 return
             print("Usuario não encontrado")
@@ -72,7 +74,6 @@ class UsuarioService:
             print(f"Erro ao deletar o usuário: {erro}")
         except Exception as erro:
             print(f"Ocorreu um erro inesperado: {erro}")
-
 
     def listar_todos_usuarios(self):
         return self.repository.listar_usuarios()
