@@ -1,6 +1,3 @@
-from services.usuario_services import UsuarioService
-from repositories.usuario_repository import UsuarioRepository
-from config.database import Session
 from system.system_config import Menu as sistema
 
 
