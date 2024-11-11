@@ -1,10 +1,12 @@
-from app.system.system_config import Menu as sistema
 import os
 import sys
 
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
+from app.system.system_config import Menu as sistema
+
+
 def main():
-    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
     sistema.menu_escolhas()
     
     
