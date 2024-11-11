@@ -1,12 +1,12 @@
 import os
-import sys
-
 from app.services.usuario_services import UsuarioService
 from app.repositories.usuario_repository import UsuarioRepository
 from app.config.database import Session
 
+
 def limpar_terminal():
     return os.system("cls||clear")
+
 
 class Menu:
 
@@ -41,6 +41,12 @@ class Menu:
                     input("Aperte enter para continuar...")
                 case 4:
                     limpar_terminal()
+                    print("\nListando usuários cadastrados.")
+                    lista_usuario = service.listar_todos_usuarios()
+                    for usuario in lista_usuario:
+                        print(
+                            f" Id: {usuario.id} - Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}"
+                        )
                     service.apagar_usuario()
                     input("Aperte enter para continuar...")
 
