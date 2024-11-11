@@ -40,9 +40,9 @@ class UsuarioService:
                     f"{usuario.id} - {usuario.nome} - {usuario.email} - {usuario.senha}"
                 )
                 return
-
+            print("Usuario não encontrado.")
         except TypeError as erro:
-            print(f"Erro ao deletar o usuário: {erro}")
+            print(f"Erro ao pesquisar usuário: {erro}")
         except Exception as erro:
             print(f"Ocorreu um erro inesperado: {erro}")
 
@@ -57,7 +57,7 @@ class UsuarioService:
                 self.repository.atualizar_usuario(usuario)
                 return
         except TypeError as erro:
-            print(f"Erro ao deletar o usuário: {erro}")
+            print(f"Erro ao alterar daods do usuário: {erro}")
         except Exception as erro:
             print(f"Ocorreu um erro inesperado: {erro}")
 
