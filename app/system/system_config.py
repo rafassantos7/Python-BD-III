@@ -1,6 +1,6 @@
-from services.usuario_services import UsuarioService
-from repositories.usuario_repository import UsuarioRepository
-from config.database import Session
+from app.services.usuario_services import UsuarioService
+from app.repositories.usuario_repository import UsuarioRepository
+from app.config.database import Session
 import os
 
 def limpar_terminal():
